@@ -24,20 +24,20 @@ router.get("/", (req, res) => {
   });
 });
 
-// READ ONE - GET //:id
-router.get("//:id", (req, res) => {
+// READ ONE - GET /:id
+router.get("/:id", (req, res) => {
   res.status(200).json({
     message: "User found!",
     user: db.users.find((usr) => usr === req.params.id),
   });
 });
 
-// UPDATE - PUT //:id
-// router.put('//:id', (req, res) => {
+// UPDATE - PUT /:id
+// router.put('/:id', (req, res) => {
 // })
 
-// DELETE - DEL //:id
-// router.delete('//:id', (req, res) => {
+// DELETE - DEL /:id
+// router.delete('/:id', (req, res) => {
 // })
 
 module.exports = router;

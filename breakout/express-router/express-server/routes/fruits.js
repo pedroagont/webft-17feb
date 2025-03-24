@@ -16,28 +16,28 @@ router.post("/", (req, res) => {
   });
 });
 
-// READ ALL - GET /api/users
+// READ ALL - GET /api/fruits
 router.get("/", (req, res) => {
   res.status(200).json({
     message: "List of fruits",
-    users: db.fruits,
+    fruits: db.fruits,
   });
 });
 
-// READ ONE - GET /api/users/:id
-router.get("//:id", (req, res) => {
+// READ ONE - GET /api/fruits/:id
+router.get("/:id", (req, res) => {
   res.status(200).json({
     message: "Fruit found!",
-    users: db.users[req.params.id],
+    fruit: db.fruits.find((frt) => frt === req.params.id),
   });
 });
 
-// UPDATE - PUT //:id
-// router.put('//:id', (req, res) => {
+// UPDATE - PUT /:id
+// router.put('/:id', (req, res) => {
 // })
 
-// DELETE - DEL //:id
-// router.delete('//:id', (req, res) => {
+// DELETE - DEL /:id
+// router.delete('/:id', (req, res) => {
 // })
 
 module.exports = router;
